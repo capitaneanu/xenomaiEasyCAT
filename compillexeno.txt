@@ -1,0 +1,7 @@
+gcc -o modified modified.c -I../../include -I/usr/xenomai/include/cobalt -I/usr/xenomai/include -D_GNU_SOURCE -D_REENTRANT -fasynchronous-unwind-tables -D__COBALT__  -D__COBALT_WRAP__ -g -O2 -L../../lib/.libs
+
+
+gcc -o modified modified.c -Wall -I../../include  -I/usr/xenomai/include/cobalt -I/usr/xenomai/include -I/usr/xenomai/include/alchemy -D_GNU_SOURCE -D_REENTRANT -fasynchronous-unwind-tables -D__COBALT__ -D__COBALT_WRAP__ -g -O2 -L../../lib/.libs -Wl,--no-as-needed -Wl,@/usr/xenomai/lib/cobalt.wrappers -Wl,@/usr/xenomai/lib/modechk.wrappers /usr/xenomai/lib/xenomai/bootstrap.o /usr/xenomai/lib/xenomai/bootstrap-pic.o  -Wl,--dynamic-list=/usr/xenomai/lib/dynlist.ld -L/usr/xenomai/lib  -lalchemy -lcopperplate -lethercat_rtdm -lcobalt -lmodechk -lpthread -lrt -lxenomai 
+
+
+gcc -o modified modified.c -Wall -I../../include  -I/usr/xenomai/include/cobalt -I/usr/xenomai/include -I/usr/xenomai/include/alchemy -D_GNU_SOURCE -D_REENTRANT -fasynchronous-unwind-tables -D__COBALT__ -D__COBALT_WRAP__ -g -O2 -L../../lib/.libs -Wl,--no-as-needed -Wl,@/usr/xenomai/lib/cobalt.wrappers -Wl,@/usr/xenomai/lib/modechk.wrappers /usr/xenomai/lib/xenomai/bootstrap.o /usr/xenomai/lib/xenomai/bootstrap-pic.o -Wl,--gc-sections -Wl,--dynamic-list=/usr/xenomai/lib/dynlist.ld -L/usr/xenomai/lib  -lalchemy -lcopperplate -lethercat_rtdm -lcobalt -lmodechk -lpthread -lrt
